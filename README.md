@@ -176,7 +176,7 @@ if(condition){
 }
 ```
 
-http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS
+Prefer the One true bracing style. It is also used by Apple. : http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS
 
 ```swift
 if condition {
@@ -211,3 +211,10 @@ if (condition) {
 
 When returning early prefer ''guard'' over ''if''.
 
+####Comments
+
+Preffer writing self explicit code which doesn't require comments. Comments suffer from rot and become obsolete soon after being written. Write comments only when you code fails to express itself.
+
+IMPORTANT: If your code may create confusion for other developers, leaving a comment is mandatory.
+
+Exception: comments used to generate documentation
