@@ -113,11 +113,9 @@ func outputDetailsForPath(path: String, fileSize: Int, extension: String,
 
 
 ### Whitespaces around binary and unary operators.
-Rationale: Operators are usually special symbols(+-/)  and when they dont have enough whitespaces they make code much harder to read. The rule is rather universal and holds for all operators:
-####Binary operators
-One space before and one space after
-###Unary operators 
-Just once space either before or after the operator
+Rationale: Operators are usually special symbols(+-/)  and when they dont have enough whitespaces they make code much harder to read. The white spaces rule is very universal and simple to remember:
+#####Binary operators: One space before and one space after
+#####Unary operators: Just once space either before or after the operator
 Examples:
 **Good:**
 ```swift
@@ -177,3 +175,39 @@ if(condition){
     sleep()
 }
 ```
+
+http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS
+
+```swift
+if condition {
+    // do stuff
+} else {
+    // do other stuff
+}
+```
+
+
+####Return early
+
+If you have to meet certain criteria to continue execution, return early.
+
+**Good:**
+```swift
+guard condition else { return error }
+```
+
+**Bad:**
+```swift
+if (condition) {
+    // condition satisfied code
+} else {
+    if (anothertest) {
+        foo()
+    } else {
+        return error
+    }
+}
+```
+
+When returning early prefer ''guard'' over ''if''.
+
