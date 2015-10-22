@@ -1,6 +1,6 @@
 # SwiftCodingStyle
 
-#### Structs vs. Classes =====
+#### Structs vs. Classes
 
 Use Structures over Classes whenever possible.
 Structures are always copied when they are passed around in your code, and do not use reference counting, so that makes them both faster and easier to reason about, because you know no one else can modify them.
