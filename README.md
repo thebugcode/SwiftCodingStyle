@@ -1,5 +1,25 @@
 # SwiftCodingStyle
 
+#### Structs vs. Classes =====
+
+Use Structures over Classes whenever possible.
+Structures are always copied when they are passed around in your code, and do not use reference counting, so that makes them both faster and easier to reason about, because you know no one else can modify them.
+
+Classes have additional capabilities that structures do not:
+  * Inheritance enables one class to inherit the characteristics of another.
+  * Type casting enables you to check and interpret the type of a class instance at runtime.
+  * Deinitializers enable an instance of a class to free up any resources it has assigned.
+  * Reference counting allows more than one reference to a class instance.
+
+Unless you need one of the functionals listed above, use Structures.
+
+Note that inheritance is (by itself) usually not a good reason to use classes, because polymorphism can be provided by protocols, and implementation reuse can be provided through composition.
+
+
+Rationale: Value types are simpler, easier to reason about, and behave as expected with the let keyword.
+
+
+
 ###Constants and Variables 
 
 Swift constants and variables associate a name with a value of a particular type. The value of a //constant// cannot be changed once it is set, whereas a //variable// can be set to a different value in the future.
