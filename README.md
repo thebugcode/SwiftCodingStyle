@@ -110,3 +110,70 @@ func outputDetailsForFile(file: File) { ... }
 func outputDetailsForPath(path: String, fileSize: Int, extension: String,
     encoding enc: NSStringEncoding) { ... }
 ```
+
+
+### Whitespaces around binary and unary operators.
+Rationale: Operators are usually special symbols(+-/)  and when they dont have enough whitespaces they make code much harder to read. The rule is rather universal and holds for all operators:
+####Binary operators
+One space before and one space after
+###Unary operators 
+Just once space either before or after the operator
+Examples:
+**Good:**
+```swift
+func <|< <A>(lhs: A, rhs: A) -> A
+```
+**Bad:**
+```swift
+func <|<<A>(lhs: A, rhs: A) -> A
+```
+The same holds for arithmetic operators
+**Good:**
+```swift
+let size = viewWidth - 2 * FIRST_CONSTANT - secondConstant - totalConstant
+```
+**Bad:**
+```swift
+let size=viewWidth-2*FIRST_CONSTANT-secondConstant-totalConstant
+```
+
+The same rule for the return type of functions:
+
+**Good:**
+```swift
+func sizeOfObject() -> Float {
+}
+```
+**Bad:**
+```swift
+func sizeOfObject()->Float{
+}
+```
+
+The same rule holds for the Swift ternary operator (from Apple's Swift guide)
+**Good:**
+```swift
+let rowHeight = hasHeader ? 50 : 20
+```
+**Bad:**
+```swift
+let rowHeight=hasHeader?50:20
+```
+
+Also, it stands for if else statements:
+**Good:**
+```swift
+if (condition) {
+    performTask()
+} else {
+    sleep()
+}
+```
+**Bad:**
+```swift
+if(condition){
+    performTask()
+}else{
+    sleep()
+}
+```
