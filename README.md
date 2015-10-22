@@ -18,6 +18,14 @@ Note that inheritance is (by itself) usually not a good reason to use classes, b
 
 Rationale: Value types are simpler, easier to reason about, and behave as expected with the let keyword.
 
+####When specifying a type, always associate the colon with the identifier
+
+
+class SmallBatchSustainableFairtrade: Coffee { ... }
+
+let timeToCoffee: NSTimeInterval = 2
+
+func makeCoffee(type: CoffeeType) -> Coffee { ... }
 
 
 ###Constants and Variables 
@@ -111,8 +119,11 @@ func variablesToFunctions() { ... }
 
 ### Keep methods small
 
-It is usually a good ideea to split large functions into smaller ones.  Prefer small concise functions over smaller ones.
+It is usually a good ideea to split large functions into smaller ones.  Prefer small concise functions over smaller ones. 
+
 Whenever you have a large function it can usually be split up into two more atomic functions. 
+
+A good rule of thumb is that any function which exceeds 15 lines of code is doing at least 2 different things. Exceptions to this rule are factory methods / methods which perform a big switch / methods which do one then more than 15 times.
 
 
 ### Number of parameters
