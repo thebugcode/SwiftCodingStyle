@@ -115,7 +115,6 @@ func outputDetailsForPath(path: String, fileSize: Int, extension: String,
 ### Whitespaces around binary and unary operators.
 Rationale: Operators are usually special symbols(+-/)  and when they dont have enough whitespaces they make code much harder to read. The white spaces rule is very universal and simple to remember:
 #####Binary operators: One space before and one space after
-#####Unary operators: Just once space either before or after the operator
 Examples:
 **Good:**
 ```swift
@@ -158,6 +157,7 @@ let rowHeight = hasHeader ? 50 : 20
 let rowHeight=hasHeader?50:20
 ```
 
+```
 Also, it stands for if else statements:
 **Good:**
 ```swift
